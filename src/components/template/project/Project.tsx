@@ -149,7 +149,7 @@ const Project: FC<propsSkill> = () => {
         };
     },[])
     return (
-        <div className={'pb-5 mt-7 overflow-hidden'}>
+        <div className={'pb-5 mt-7 overflow-hidden relative'}>
             <div className={'lg:block hidden'}>
                 <div className={"mb-7 pb-3"}>
                     <Title title={'Projects'} textPosition={'text-right'}/>
@@ -179,12 +179,9 @@ const Project: FC<propsSkill> = () => {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
             {/*Mobile*/}
-            <div className={'block lg:hidden'}>
+            <div className={'block lg:hidden overflow-hidden'}>
                 <div className={"mb-7 pb-3"}>
                     <Title title={'Projects'} textPosition={'text-left'}/>
                     <div className={"md:grid md:grid-cols-2 gap-10"}>
@@ -197,13 +194,22 @@ const Project: FC<propsSkill> = () => {
                 </div>
                 <div className={"mb-7 pb-3"}>
                     <div className={"md:grid md:grid-cols-2 gap-10"}>
-                        <DesProject description={descriptionTravel} title={'1. Travel Website'}
-                                    subTitle={'Final Year'}/>
-                        <div className={"ml-3"}>
+                        <DesProject description={descriptionEnterprise} title={'2. EnterPrise'} styleCustomTitle={'observe-right'}
+                                    subTitle={'Subject'} styleCustomDescription={'observe-home-left'} href={'https://github.com/TeamWebEnterprise/enterprise_web_final'}/>
+                        <div className={"ml-3 observe-right"}>
                             <SwiperComponent images={enterpriseImages}/>
                         </div>
                     </div>
                 </div>
+                <div className={"md:grid md:grid-cols-2 gap-10"}>
+                    <DesProject description={descriptionSTPage} title={'3. ST United Page'} styleCustomDescription={'observe-right'}
+                                subTitle={'Project Intern'} styleCustomTitle={'observe-home-left'} href={'https://github.com/Bang222/page-stUnited'}/>
+                    <div className={"ml-3 observe-home-left"}>
+                        <SwiperComponent images={STImages}/>
+                    </div>
+                </div>
+            </div>
+            <div id={'contact'} className={'absolute bg-pink-500 bottom-0'}>
             </div>
         </div>
     );
