@@ -6,9 +6,10 @@ interface propsDesProject {
     subTitle:string
     styleCustomDescription?:string
     styleCustomTitle?:string
+    href?:string
 }
 
-const DesProject: FC<propsDesProject> = ({description,title,subTitle,styleCustomDescription,styleCustomTitle}) => {
+const DesProject: FC<propsDesProject> = ({description,title,subTitle,styleCustomDescription,styleCustomTitle,href}) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(false)
     const truncated: string = description.slice(0, 300);
     const toggleExpand = () => {
@@ -18,14 +19,14 @@ const DesProject: FC<propsDesProject> = ({description,title,subTitle,styleCustom
     return (
         <div>
             <h3 className={`text-2xl mb-3 ${styleCustomTitle}`}>
-                <b>{title}</b>({subTitle})
+                <b><a href={href} target={'blank'}>{title}</a>({subTitle}) </b>
             </h3>
             <p className={`text-[13px] ${styleCustomDescription}`}>
                 {isExpanded ? description : truncated}
             </p>
             {description.length > 300 && (
                 <span
-                    className={'text-blue-500 cursor-pointer text-md'}
+                    className={`text-blue-500 cursor-pointer text-xs ${styleCustomDescription}`}
                     onClick={toggleExpand}
                 >
                 {isExpanded ? ' ...See less' : ' ...See more'}
