@@ -68,7 +68,7 @@ const Home: FC = () => {
         observerMiddle.current = new IntersectionObserver(handleIntersectionMiddle, {
             root: null, // Use the viewport as the root
             rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
+            threshold: 0.5, // Trigger when 50% of the element is visible
         });
 
         observer.current = new IntersectionObserver(handleIntersection, {
@@ -99,11 +99,11 @@ const Home: FC = () => {
         };
     },[])
     return (
-        <div className="flex justify-center relative ">
+        <div className="flex justify-center relative">
             <div className="mb-10 mt-[100px]">
-                <div className="">
+                <div className="overflow-hidden">
                     <div className="">
-                        <p className="pt-1 mt-1 text-pink-500 observe-home"> My name is</p>
+                        <p className="pt-1 mt-1 text-pink-500 observe-right"> My name is</p>
                         <h1 className="text-3xl pb-2 mb-2 font-bold observe-home-left"> Danh Pham Cong Bang</h1>
                         <h2 className="font-bold text-slate-500 text-2xl observe-right"> I'm a developer fullstack</h2>
                         <p className="pb-1 mb-1 text-gray-500 observe-home-left">

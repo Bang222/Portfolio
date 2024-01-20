@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-interface propsTitle {
+export interface propsTitle {
     title: string;
     textPosition:string;
 }
@@ -8,7 +8,7 @@ interface propsTitle {
 const Title: FC<propsTitle> = ({title,textPosition}) => {
     return (
         <div className='w-full mb-12'>
-            <div className={`w-full ${textPosition}`}>
+            <div className={`w-full ${textPosition}`} data-testid="title-container">
                 <p className='text-5xl md:text-7xl text-gray-800 font-bold inline border-b-4 border-pink-600 mb-4'>
                     {title}
                 </p>
