@@ -1,0 +1,4 @@
+this is component to build Title the web like show the title
+About Home contact Project to decrese time buil the website
+
+The way use: Declare <Title title: "Contact"  textPosition: "text-left"/> like this
