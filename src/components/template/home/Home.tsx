@@ -68,7 +68,7 @@ const Home: FC = () => {
         observerMiddle.current = new IntersectionObserver(handleIntersectionMiddle, {
             root: null, // Use the viewport as the root
             rootMargin: '0px', // No margin
-            threshold: 0.5, // Trigger when 50% of the element is visible
+            threshold: 0, // Trigger when 50% of the element is visible
         });
 
         observer.current = new IntersectionObserver(handleIntersection, {
