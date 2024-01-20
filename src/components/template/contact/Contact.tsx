@@ -39,7 +39,7 @@ const Contact: FC<propsContact> = () => {
         <div className={'mt-7 pb-10'}>
             <Title title={'Contact'} textPosition={'text-left'}/>
             <div className={'flex justify-center'}>
-                <div className={'w-[90vw] lg:w-[30vw] px-7 lg:py-10 shadow-xl rounded-lg bg-white'}>
+                <div className={'w-[90vw] lg:w-[30vw] px-7 py-7 lg:py-10 shadow-xl rounded-lg bg-white'}>
                     <form  onSubmit={handleSubmit}>
                         <div className="relative mb-6 " data-te-input-wrapper-init>
                             <input
