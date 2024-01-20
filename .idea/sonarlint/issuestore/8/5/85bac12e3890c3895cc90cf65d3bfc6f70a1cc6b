@@ -1,0 +1,4 @@
+
+xtypescript:S101"WRename interface "propsDesProject" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(©‚ÁA8ÿÌ¶ïÏ1
+ëtypescript:S6848"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(õ¡ÚÊùÿÿÿÿ8ÿÌ¶ïÏ1
+‡typescript:S1082"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(õ¡ÚÊùÿÿÿÿ8ÿÌ¶ïÏ1
