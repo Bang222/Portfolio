@@ -7,8 +7,6 @@ Y
 )src/components/template/navbar/Navbar.tsx,3/e/3e11ef716ff4a05d87f0c4342eb5c9810db65369
 ;
 src/App.tsx,8/3/835da56f32df714aaed6285a5b7fc3a7807851e4
-@
-src/App.test.tsx,1/f/1fc1c06a0502bf303f8ba35e530938a98e7e35b2
 W
 'src/components/template/about/About.tsx,0/9/090bca623e38fb101a7e1681142875889dafe73a
 ;
