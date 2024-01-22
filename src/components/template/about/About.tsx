@@ -74,7 +74,7 @@ const About: FC<propsAbout> = () => {
         <div className={"relative overflow-hidden"}>
             <div className='w-full pb-10'>
                 <div className='flex flex-col w-full h-full mt-5'>
-                    <Title title={"About"} textPosition={'text-left'}/>
+                    <Title title={"About"} textPosition={'text-left'} data-testid="title-about"/>
                     <div className='w-full grid sm:grid-cols-2 gap-10'>
                         <div className='sm:text-right text-3xl font-bold observe-me'>
                             <p>Hi. I'm Danh Bang, nice to meet you Please take a look around .</p>
