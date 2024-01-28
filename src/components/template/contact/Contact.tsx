@@ -20,11 +20,9 @@ const Contact: FC<propsContact> = () => {
         } else{
             setNameError('')
         }
-        if(!email.trim()) {
-            setEmailError('Email can not null')
+        if(!email.trim() || !regexEmail.test(email)) {
+            setEmailError('Email validate')
             setIsSubmitted(false)
-        }else if(!regexEmail.test(email)){
-            setEmailError('Email not validate')
         }else{
             setEmailError('')
         }
@@ -32,7 +30,28 @@ const Contact: FC<propsContact> = () => {
             setIsSubmitted(true)
         }
         if(isSubmitted){
-
+            const formData = new FormData();
+            formData.append("Name", name);
+            formData.append("Email", email);
+            formData.append("Message",message);
+            fetch(
+                `https://sheet.best/api/sheets/78dfd9cd-5996-49f3-82c6-8b2e0b81251b`,
+                {
+                    method: "POST",
+                    body: formData
+                }
+            )
+                .then((res) => res.json())
+                .then((data) => {
+                    setName("")
+                    setEmail("")
+                    setMessage("")
+                    alert("I recived data form you i will contact again,Thank you!");
+                })
+                .catch((error) => {
+                    // alert("Can not send data please try again")
+                    console.log(error.message);
+                });
         }
     }
     return (
