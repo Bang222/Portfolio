@@ -13,6 +13,14 @@ const Contact: FC<propsContact> = () => {
     const [message,setMessage] = useState<string>('')
     const [loading,setLoading] = useState<boolean>(false)
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+    const options: Intl.DateTimeFormatOptions = {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+    }
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if(!name.trim()) {
@@ -32,9 +40,11 @@ const Contact: FC<propsContact> = () => {
         }
         if(isSubmitted){
             const formData = new FormData();
+            const dateNow = new Date();
             formData.append("Name", name);
             formData.append("Email", email);
             formData.append("Message",message);
+            formData.append("TimeSended",dateNow.toLocaleDateString('es-uk',options))
             setLoading(true)
             fetch(
                 `https://sheet.best/api/sheets/78dfd9cd-5996-49f3-82c6-8b2e0b81251b`,
@@ -49,10 +59,12 @@ const Contact: FC<propsContact> = () => {
                     setEmail("")
                     setMessage("")
                     setLoading(false)
+                    // setIsSubmitted(false)
                     alert("I recived data form you i will contact again,Thank you!");
                 })
                 .catch((error) => {
                     setLoading(false)
+                    // setIsSubmitted(false)
                     alert("Can not send data please try again")
                     // setLoading(false)
                     // alea(error.message);
