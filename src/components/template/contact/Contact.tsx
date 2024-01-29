@@ -59,12 +59,12 @@ const Contact: FC<propsContact> = () => {
                     setEmail("")
                     setMessage("")
                     setLoading(false)
-                    // setIsSubmitted(false)
+                    setIsSubmitted(false)
                     alert("I recived data form you i will contact again,Thank you!");
                 })
                 .catch((error) => {
                     setLoading(false)
-                    // setIsSubmitted(false)
+                    setIsSubmitted(false)
                     alert("Can not send data please try again")
                     // setLoading(false)
                     // alea(error.message);
