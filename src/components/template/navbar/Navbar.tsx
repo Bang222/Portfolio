@@ -11,9 +11,10 @@ const Navbar:FC = ()  => {
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                 <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <Link
-                        className="text-xl font-extrabold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+                        className="text-xl font-extrabold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white cursor-pointer"
                         to="#"
                         spy={true}
+                        href={'.'}
                         smooth={true}
                         duration={300}
                         delay={100}
@@ -41,7 +42,8 @@ const Navbar:FC = ()  => {
                         <li className="nav-item">
                             <Link
                                 className="px-3 py-2 flex items-center text-xs uppercase leading-snug text-white hover:opacity-75"
-                                to="home"
+                                to={"home"}
+                                href={'#home'}
                                 spy={true}
                                 smooth={true}
                                 hashSpy={true}
@@ -52,14 +54,15 @@ const Navbar:FC = ()  => {
                                 ignoreCancelEvents={false}
                                 spyThrottle={300}
                             >
-                                <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span
-                                className="ml-2">Home</span>
+
+                               Home
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link
                                 className="px-3 py-2 flex items-center text-xs uppercase leading-snug text-white hover:opacity-75 scroll-smooth"
                                 to="about"
+                                href={'#about'}
                                 spy={true}
                                 smooth={true}
                                 hashSpy={true}
@@ -78,6 +81,7 @@ const Navbar:FC = ()  => {
                             <Link
                                 className="px-3 py-2 flex items-center text-xs uppercase leading-snug text-white hover:opacity-75"
                                 to="projects"
+                                href={'#projects'}
                                 spy={true}
                                 smooth={true}
                                 hashSpy={true}
@@ -96,6 +100,7 @@ const Navbar:FC = ()  => {
                             <Link
                                 className="px-3 py-2 flex items-center text-xs uppercase leading-snug text-white hover:opacity-75"
                                 to="contact"
+                                href={'#contact'}
                                 spy={true}
                                 smooth={true}
                                 hashSpy={true}
