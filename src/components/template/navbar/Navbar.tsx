@@ -55,7 +55,8 @@ const Navbar:FC = ()  => {
                                 spyThrottle={300}
                             >
 
-                               Home
+                                <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span
+                                className="ml-2">Home</span>
                             </Link>
                         </li>
                         <li className="nav-item">

@@ -21,7 +21,7 @@ const DesProject: FC<propsDesProject> = ({description,title,subTitle,styleCustom
             <h3 className={`text-2xl mb-3 ${styleCustomTitle}`}>
                 <b><a href={`${href}`} className={'text-blue-500 underline'} target={'blank'}>{title}</a><span> ({subTitle})</span></b>
             </h3>
-            <p className={`text-[13px] ${styleCustomDescription}`}>
+            <p className={`text-[13px] text-justify ${styleCustomDescription}`}>
                 {isExpanded ? description : truncated}
             </p>
             {description.length > 300 && (

@@ -80,7 +80,7 @@ const About: FC<propsAbout> = () => {
                             <p>Hi. I'm Danh Bang, nice to meet you Please take a look around .</p>
                         </div>
                         <div>
-                            <p className={"text-xl text-gray-600 observe-me"}>
+                            <p className={"text-xl text-gray-600 observe-me text-justify"}>
                                 I'm currently a senior collecting student majoring in information technology at Greenwich University.
                                 I love technology and I wanna create something new, something great. I have strengths in JavaScript, TypeScript,
                                 and Reactjs,Nestjs. I am eager to become a fresher, In order to foster a lasting connection

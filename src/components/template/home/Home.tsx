@@ -106,7 +106,7 @@ const Home: FC = () => {
                         <p className="pt-1 mt-1 text-pink-500 observe-right"> My name is</p>
                         <h1 className="text-3xl pb-2 mb-2 font-bold observe-home-left"> Danh Pham Cong Bang</h1>
                         <h2 className="font-bold text-slate-500 text-2xl observe-right"> I'm a developer fullstack</h2>
-                        <p className="pb-1 mb-1 text-gray-500 observe-home-left">
+                        <p className="pb-1 mb-1 text-gray-500 observe-home-left text-justify">
                             Hello! I'm a passionate Full-stack developer with expertise in crafting flexible and maintainable web applications.
                             My focus is on delivering an outstanding user experience, both in terms of design and functionality.
                             Strong teamwork and creativity are my assets, and I look forward to contributing to the success of your project.
