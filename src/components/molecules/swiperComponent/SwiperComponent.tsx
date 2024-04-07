@@ -26,7 +26,7 @@ const SwiperComponent: FC<propsSwiper> = ({images}) => {
             {images.map((value, index) => {
                 return (
                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                    <SwiperSlide key={value.id}><img className={'h-[300px] md:h-[350px] md:w-[450px]'}
+                    <SwiperSlide key={value.id}><img className={'h-[300px] md:h-[350px] md:w-[450px] object-cover'}
                                                      src={value.images} alt={`image${index}`}/></SwiperSlide>
                 )
             })}

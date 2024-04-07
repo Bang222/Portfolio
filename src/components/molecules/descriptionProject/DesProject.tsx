@@ -1,32 +1,25 @@
 import React, {FC, useState} from 'react';
+import {dataPassProp} from '../../template/project/Project'
 
-interface propsDesProject {
-    description: string
-    title:string
-    subTitle:string
-    styleCustomDescription?:string
-    styleCustomTitle?:string
-    href?:string
-}
-
-const DesProject: FC<propsDesProject> = ({description,title,subTitle,styleCustomDescription,styleCustomTitle,href}) => {
+const DesProject: FC<dataPassProp> = (item: dataPassProp) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(false)
-    const truncated: string = description.slice(0, 300);
+    const truncated: string = item.description.slice(0, 300);
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
     //${styleCustomDescription} ${styleCustomTitle}
     return (
         <div>
-            <h3 className={`text-2xl mb-3 ${styleCustomTitle}`}>
-                <b><a href={`${href}`} className={'text-blue-500 underline'} target={'blank'}>{title}</a><span> ({subTitle})</span></b>
+            <h3 className={`text-2xl mb-3 ${item.styleCustomTitle}`}>
+                <b><a href={`${item.link}`} className={'text-blue-500 underline'}
+                      target={'blank'}>{item.title}</a><span> ({item.subTitle})</span></b>
             </h3>
-            <p className={`text-[13px] text-justify ${styleCustomDescription}`}>
-                {isExpanded ? description : truncated}
+            <p className={`text-[13px] text-justify ${item.styleCustomDescription}`}>
+                {isExpanded ? item.description : truncated}
             </p>
-            {description.length > 300 && (
+            {item.description.length > 300 && (
                 <span
-                    className={`text-blue-500 cursor-pointer text-xs ${styleCustomDescription}`}
+                    className={`text-blue-500 cursor-pointer text-xs text-justify ${item.styleCustomDescription}`}
                     onClick={toggleExpand}
                 >
                 {isExpanded ? ' ...See less' : ' ...See more'}
