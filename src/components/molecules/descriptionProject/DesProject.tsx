@@ -11,7 +11,7 @@ const DesProject: FC<dataPassProp> = (item: dataPassProp) => {
     return (
         <div>
             <h3 className={`text-2xl mb-3 ${item.styleCustomTitle}`}>
-                <b><a href={`${item.link}`} className={'text-blue-500 underline'}
+                <b><a href={`${item.link}`} className={'text-black'}
                       target={'blank'}>{item.title}</a><span> ({item.subTitle})</span></b>
             </h3>
             <p className={`text-[13px] text-justify ${item.styleCustomDescription}`}>

@@ -25,96 +25,97 @@ const data: home = {
 }
 
 const Home: FC = () => {
-    const observer = useRef<IntersectionObserver | null>(null);
-    const observerLeft = useRef<IntersectionObserver | null>(null);
-    const observerMiddle = useRef<IntersectionObserver | null>(null);
-    useEffect(() => {
-        const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
-                const {target, isIntersecting} = entry;
-                if (isIntersecting) {
-                    target.classList.add('animate-fadeLeft');
-                    target.classList.remove('animate-fadeRight');
-                    target.classList.add('opacity-1');
-                    target.classList.remove('opacity-0');
-                } else {
-                    target.classList.remove('animate-fadeLeft');
-                    target.classList.add('animate-fadeRight');
-                    target.classList.add('opacity-0');
-                    target.classList.remove('opacity-1');
-                }
-            })
-        };
-        const handleIntersectionMiddle = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
-                const {target, isIntersecting} = entry;
-                if (isIntersecting) {
-                    target.classList.add('animate-fadeIn');
-                    target.classList.remove('animate-fadeOut');
-                    target.classList.add('opacity-1');
-                    target.classList.remove('opacity-0');
-                } else {
-                    target.classList.remove('animate-fadeIn');
-                    target.classList.add('animate-fadeOut');
-                    target.classList.add('opacity-0');
-                    target.classList.remove('opacity-1');
-                }
-            })
-        };
-        const handleIntersectionLeft = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
-                const {target, isIntersecting} = entry;
-                if (isIntersecting) {
-                    target.classList.add('animate-fadeRight');
-                    target.classList.remove('animate-fadeLeft');
-                    target.classList.add('opacity-1');
-                    target.classList.remove('opacity-0');
-                } else {
-                    target.classList.remove('animate-fadeRight');
-                    target.classList.add('animate-fadeLeft');
-                    target.classList.add('opacity-0');
-                    target.classList.remove('opacity-1');
-                }
-            })
-        };
-        observerLeft.current = new IntersectionObserver(handleIntersectionLeft, {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
-        });
-        observerMiddle.current = new IntersectionObserver(handleIntersectionMiddle, {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
-        });
+    // const observer = useRef<IntersectionObserver | null>(null);
+    // const observerLeft = useRef<IntersectionObserver | null>(null);
+    // const observerMiddle = useRef<IntersectionObserver | null>(null);
+    // useEffect(() => {
+    //     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    //         entries.forEach(entry => {
+    //             const {target, isIntersecting} = entry;
+    //             if (isIntersecting) {
+    //                 target.classList.add('animate-fadeLeft');
+    //                 target.classList.remove('animate-fadeRight');
+    //                 target.classList.add('opacity-1');
+    //                 target.classList.remove('opacity-0');
+    //             } else {
+    //                 target.classList.remove('animate-fadeLeft');
+    //                 target.classList.add('animate-fadeRight');
+    //                 target.classList.add('opacity-0');
+    //                 target.classList.remove('opacity-1');
+    //             }
+    //         })
+    //     };
+    //     const handleIntersectionMiddle = (entries: IntersectionObserverEntry[]) => {
+    //         entries.forEach(entry => {
+    //             const {target, isIntersecting} = entry;
+    //             if (isIntersecting) {
+    //                 target.classList.add('animate-fadeIn');
+    //                 target.classList.remove('animate-fadeOut');
+    //                 target.classList.add('opacity-1');
+    //                 target.classList.remove('opacity-0');
+    //             } else {
+    //                 target.classList.remove('animate-fadeIn');
+    //                 target.classList.add('animate-fadeOut');
+    //                 target.classList.add('opacity-0');
+    //                 target.classList.remove('opacity-1');
+    //             }
+    //         })
+    //     };
+    //     const handleIntersectionLeft = (entries: IntersectionObserverEntry[]) => {
+    //         entries.forEach(entry => {
+    //             const {target, isIntersecting} = entry;
+    //             if (isIntersecting) {
+    //                 target.classList.add('animate-fadeRight');
+    //                 target.classList.remove('animate-fadeLeft');
+    //                 target.classList.add('opacity-1');
+    //                 target.classList.remove('opacity-0');
+    //             } else {
+    //                 target.classList.remove('animate-fadeRight');
+    //                 target.classList.add('animate-fadeLeft');
+    //                 target.classList.add('opacity-0');
+    //                 target.classList.remove('opacity-1');
+    //             }
+    //         })
+    //     };
+    //     observerLeft.current = new IntersectionObserver(handleIntersectionLeft, {
+    //         root: null, // Use the viewport as the root
+    //         rootMargin: '0px', // No margin
+    //         threshold: 0, // Trigger when 50% of the element is visible
+    //     });
+    //     observerMiddle.current = new IntersectionObserver(handleIntersectionMiddle, {
+    //         root: null, // Use the viewport as the root
+    //         rootMargin: '0px', // No margin
+    //         threshold: 0, // Trigger when 50% of the element is visible
+    //     });
 
-        observer.current = new IntersectionObserver(handleIntersection, {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
-        });
+    //     observer.current = new IntersectionObserver(handleIntersection, {
+    //         root: null, // Use the viewport as the root
+    //         rootMargin: '0px', // No margin
+    //         threshold: 0, // Trigger when 50% of the element is visible
+    //     });
 
-        // Start observing the elements you want to track
-        const elementsToObserve = document.querySelectorAll('.observe-right');
-        const elementsToObserveLeft = document.querySelectorAll('.observe-home-left');
-        const elementsToObserveMiddle = document.querySelectorAll('.observe-home-middle');
+    //     // Start observing the elements you want to track
+    //     const elementsToObserve = document.querySelectorAll('.observe-right');
+    //     const elementsToObserveLeft = document.querySelectorAll('.observe-home-left');
+    //     const elementsToObserveMiddle = document.querySelectorAll('.observe-home-middle');
 
-        elementsToObserve.forEach((element) => {
-            observer.current?.observe(element);
-        });
-        elementsToObserveMiddle.forEach((element) => {
-            observerMiddle.current?.observe(element);
-        });
-        elementsToObserveLeft.forEach((element) => {
-            observerLeft.current?.observe(element);
-        })
-        // Cleanup function to disconnect the observer when the component unmounts
-        return () => {
-            observer.current?.disconnect();
-            observerLeft.current?.disconnect();
-            observerMiddle.current?.disconnect();
-        };
-    }, [])
+    //     elementsToObserve.forEach((element) => {
+    //         observer.current?.observe(element);
+    //     });
+    //     elementsToObserveMiddle.forEach((element) => {
+    //         observerMiddle.current?.observe(element);
+    //     });
+    //     elementsToObserveLeft.forEach((element) => {
+    //         observerLeft.current?.observe(element);
+    //     })
+    //     // Cleanup function to disconnect the observer when the component unmounts
+    //     return () => {
+    //         observer.current?.disconnect();
+    //         observerLeft.current?.disconnect();
+    //         observerMiddle.current?.disconnect();
+    //     };
+    // }, [])
+
     return (
         <div className="flex justify-center relative">
             <div className="mb-10 mt-[100px]">

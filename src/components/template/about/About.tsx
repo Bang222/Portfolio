@@ -5,71 +5,71 @@ interface propsAbout {
 }
 
 const About: FC<propsAbout> = () => {
-    const observer = useRef<IntersectionObserver | null>(null);
-    const observerTop = useRef<IntersectionObserver | null>(null);
-    useEffect(() =>{
-        const handleIntersection  = (entries:IntersectionObserverEntry[] ) => {
-        entries.forEach(entry => {
-            const { target, isIntersecting } = entry;
-            if(isIntersecting) {
-                target.classList.add('animate-fadeIn');
-                target.classList.remove('animate-fadeOut');
-                target.classList.add('opacity-1');
-                target.classList.remove('opacity-0');
-            }
-            else{
-                target.classList.remove('animate-fadeIn');
-                target.classList.add('animate-fadeOut');
-                target.classList.add('opacity-0');
-                target.classList.remove('opacity-1');
-            }
-        })
-    };
-        const handleIntersectionTop  = (entries:IntersectionObserverEntry[] ) => {
-            entries.forEach(entry => {
-                const { target, isIntersecting } = entry;
-                if(isIntersecting) {
-                    target.classList.add('animate-fadeOut');
-                    target.classList.remove('animate-fadeIn');
-                    target.classList.add('opacity-1');
-                    target.classList.remove('opacity-0');
-                }
-                else{
-                    target.classList.remove('animate-fadeOut');
-                    target.classList.add('animate-fadeIn');
-                    target.classList.add('opacity-0');
-                    target.classList.remove('opacity-1');
-                }
-            })
-        };
-        observer.current = new IntersectionObserver(handleIntersection, {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
-        });
-        observerTop.current = new IntersectionObserver(handleIntersectionTop, {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // No margin
-            threshold: 0, // Trigger when 50% of the element is visible
-        });
+    // const observer = useRef<IntersectionObserver | null>(null);
+    // const observerTop = useRef<IntersectionObserver | null>(null);
+    // useEffect(() =>{
+    //     const handleIntersection  = (entries:IntersectionObserverEntry[] ) => {
+    //     entries.forEach(entry => {
+    //         const { target, isIntersecting } = entry;
+    //         if(isIntersecting) {
+    //             target.classList.add('animate-fadeIn');
+    //             target.classList.remove('animate-fadeOut');
+    //             target.classList.add('opacity-1');
+    //             target.classList.remove('opacity-0');
+    //         }
+    //         else{
+    //             target.classList.remove('animate-fadeIn');
+    //             target.classList.add('animate-fadeOut');
+    //             target.classList.add('opacity-0');
+    //             target.classList.remove('opacity-1');
+    //         }
+    //     })
+    // };
+    //     const handleIntersectionTop  = (entries:IntersectionObserverEntry[] ) => {
+    //         entries.forEach(entry => {
+    //             const { target, isIntersecting } = entry;
+    //             if(isIntersecting) {
+    //                 target.classList.add('animate-fadeOut');
+    //                 target.classList.remove('animate-fadeIn');
+    //                 target.classList.add('opacity-1');
+    //                 target.classList.remove('opacity-0');
+    //             }
+    //             else{
+    //                 target.classList.remove('animate-fadeOut');
+    //                 target.classList.add('animate-fadeIn');
+    //                 target.classList.add('opacity-0');
+    //                 target.classList.remove('opacity-1');
+    //             }
+    //         })
+    //     };
+    //     observer.current = new IntersectionObserver(handleIntersection, {
+    //         root: null, // Use the viewport as the root
+    //         rootMargin: '0px', // No margin
+    //         threshold: 0, // Trigger when 50% of the element is visible
+    //     });
+    //     observerTop.current = new IntersectionObserver(handleIntersectionTop, {
+    //         root: null, // Use the viewport as the root
+    //         rootMargin: '0px', // No margin
+    //         threshold: 0, // Trigger when 50% of the element is visible
+    //     });
 
-        // Start observing the elements you want to track
-        const elementsToObserve = document.querySelectorAll('.observe-me');
-        const elementsToObserveTop = document.querySelectorAll('.observe-top');
+    //     // Start observing the elements you want to track
+    //     const elementsToObserve = document.querySelectorAll('.observe-me');
+    //     const elementsToObserveTop = document.querySelectorAll('.observe-top');
 
-        elementsToObserve.forEach((element) => {
-            observer.current?.observe(element);
-        });
-        elementsToObserveTop.forEach((element) => {
-            observerTop.current?.observe(element);
-        });
+    //     elementsToObserve.forEach((element) => {
+    //         observer.current?.observe(element);
+    //     });
+    //     elementsToObserveTop.forEach((element) => {
+    //         observerTop.current?.observe(element);
+    //     });
 
-        // Cleanup function to disconnect the observer when the component unmounts
-        return () => {
-            observer.current?.disconnect();
-            observerTop.current?.disconnect();
-        };
-    },[])
+    //     // Cleanup function to disconnect the observer when the component unmounts
+    //     return () => {
+    //         observer.current?.disconnect();
+    //         observerTop.current?.disconnect();
+    //     };
+    // },[])
     return (
         <div className={"relative overflow-hidden"}>
             <div className='w-full pb-10'>
