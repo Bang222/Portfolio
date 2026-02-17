@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Title from "../../molecules/title/Title";
 import logo from '../../../assets/images/travelImagesProject/logo.png'
