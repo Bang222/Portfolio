@@ -12,7 +12,7 @@ function App() {
       <div className={`lg:bg-gray-700 bg-gray-300" `}>
          <Navbar/>
           <div className={"container lg:max-w-[1000px] lg:bg-gray-300 mx-auto px-8 md:px-10"}>
-              <div id={'home'}>bang</div>
+              <div id={'home'}>Danh Pham Công Bằng</div>
               <Home/>
               <LineComponent/>
               <About/>

@@ -10,10 +10,11 @@ interface dataNavType {
 
 let data: dataNavType [] =
     [
-        {href: '.', title: 'Portfolio', to: '#'},
-        {href: 'home', title: 'Home', to: '#home'},
-        {href: 'about', title: 'About', to: '#about'},
-        {href: 'contact', title: 'Contact', to: '#contact'}
+        {href: '.', title: 'Portfolio', to: 'home'},
+        {href: 'home', title: 'Home', to: 'home'},
+        {href: 'about', title: 'About', to: 'about'},
+        {href: 'projects', title: 'Projects', to: 'projects'},
+        {href: 'contact', title: 'Contact', to: 'contact'}
     ]
 
 const Navbar: FC = () => {
@@ -29,10 +30,11 @@ const Navbar: FC = () => {
                         spy={true}
                         href={data[0].href}
                         smooth={true}
-                        duration={300}
+                        duration={500}
                         delay={100}
                         isDynamic={true}
                         spyThrottle={300}
+                        offset={-20}
                     >
                         {data[0].title}
                     </Link>
@@ -62,8 +64,8 @@ const Navbar: FC = () => {
                                         spy={true}
                                         smooth={true}
                                         hashSpy={true}
-                                        offset={50}
-                                        duration={300}
+                                        offset={-20}
+                                        duration={500}
                                         delay={100}
                                         isDynamic={true}
                                         ignoreCancelEvents={false}

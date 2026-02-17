@@ -72,7 +72,7 @@ const Contact: FC<propsContact> = () => {
         }
     }
     return (
-        <div className={'mt-7 pb-10'}>
+        <div id='contact' className={'mt-7 pb-10'}>
             <Title title={'Contact'} textPosition={'text-left'}/>
             <div className={'flex justify-center'}>
                 <div className={'w-[90vw] lg:w-[30vw] px-7 py-7 lg:py-10 shadow-xl rounded-lg bg-white'}>
