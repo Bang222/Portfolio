@@ -89,7 +89,7 @@ const data: allDataPass[] = [
     },
     {
         id: 3,
-        description: descriptionSTPage,
+        description: descriptionSTPage ,
         images: STImages,
         styleCustomDescription: "observe-right",
         link: "https://github.com/Bang222/page-stUnited",
