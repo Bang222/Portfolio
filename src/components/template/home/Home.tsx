@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef} from 'react';
+import { FC } from 'react';
 import PresentContactSocial from '../../molecules/presentContactSocial/PresentContactSocial';
 import avataBang from '../../../assets/images/travelImagesProject/bang.jpeg';
 import {FaFacebookSquare, FaLinkedin} from 'react-icons/fa';

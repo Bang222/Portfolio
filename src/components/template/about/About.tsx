@@ -1,5 +1,5 @@
 import Title from "../../molecules/title/Title";
-import React, { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 
 interface propsAbout {
 }

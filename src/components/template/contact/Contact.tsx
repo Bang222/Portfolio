@@ -12,7 +12,7 @@ const Contact: FC<propsContact> = () => {
     const [emailError,setEmailError] = useState<string>('')
     const [message,setMessage] = useState<string>('')
     const [loading,setLoading] = useState<boolean>(false)
-    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+    const regexEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/g;
     const options: Intl.DateTimeFormatOptions = {
         year: 'numeric',
         month: 'numeric',
